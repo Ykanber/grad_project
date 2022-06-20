@@ -1,0 +1,134 @@
+<!---Initialize Home Page--->
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Twitter Bot Detector</title>
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <link rel = "icon" href = "https://www.pngfind.com/pngs/m/413-4133187_how-i-easily-built-a-web-scraping-twitter.png" type = "image/x-icon">
+    <style>
+    .dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.btn-item, button {
+    padding: 2px 5px;
+    margin-top: 20px;
+    border-radius: 3px;
+    background: #830a0a;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    li {
+      float: left;
+    }
+    ul.topnav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    ul.topnav li.right {float: right;}
+    .container {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .page{
+      height: 80%;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      }
+
+    </style>
+    </head>
+    <body>
+        <ul class="topnav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/FAQ">FAQ</a></li>
+        </ul>
+        <!---Initialize structure of Title and house picture--->
+        <!---Containerize main page for styling--->
+        <div class = "page">
+            <!---Containerize paragraph and form for styling--->
+            <div class = "container">
+              <span class="iconify" data-icon="bi:robot" style="font-size:94px"></span>
+              
+              <h1>Twitter Bot Detector</h1>  
+              <br><br> 
+                <div class = "intro">
+                    <b>
+                        <p class = "Note"><b>Enter the Twitter username of whom you want to detect!</b></p>
+                        <p class = "Note"><b>Example: @yusufalptigin</b></p>
+                    </b>
+                </div>
+                <br>
+                <!---Initialize form structure and inputs, set method to "POST"--->
+                <form action = "{{url_for('predict')}}" method = "post" class = "info">
+                  <row>
+                    <input type="text" id="age" name="account_name" placeholder="@exampleuser" required="required"/>
+
+                    <button type="submit" class="btn-item">Predict</button>
+                  </row>
+                    
+                </form>
+                <br> 
+                <!---Set placeholder for prediction output--->
+                <div class ="pred">
+                    <p class = "result"><b>{{ prediction_text }}</b></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

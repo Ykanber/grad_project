@@ -1,0 +1,177 @@
+<!---Initialize Home Page--->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Twitter Bot Detector</title>
+        <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel = "icon" href = "https://www.pngfind.com/pngs/m/413-4133187_how-i-easily-built-a-web-scraping-twitter.png" type = "image/x-icon">
+    <style>
+    .dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+html, body {
+    margin: 0;
+    height: 100%;
+    padding-top: 50px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.btn-item, button {
+    padding: 10px 5px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background: #830a0a;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+    ul.topnav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      z-index:99;
+      width: 100%;
+      
+    }
+    ul{
+        text-align: left; 
+    }
+    li {
+        padding-left: 0pt;
+    }
+    ul.topnav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      float: left;
+
+    }
+    ul.topnav li.right {float: right;}
+    .container {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .page{
+      height: 80%;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      }
+
+    </style>
+    </head>
+    <body>
+        <ul class="topnav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/FAQ">FAQ</a></li>
+        </ul>
+        <!---Initialize structure of Title and house picture--->
+
+
+                     
+                        <div class="row">
+                            <div class="col">
+                              
+                            </div>
+                            <div class="col-7">
+                              <h1>FAQ</h1>
+                              <div class="container">
+                                <ul>
+                                    <li><a href="#1">What is a Twitter Bot?</a></li>
+                                    <li><a href="#2">Who Created Twitter Bot Detector?</a></li>
+                                    <li><a href="#3">How Does Twitter Bot Detector Work?</a></li>
+                                    <li><a href="#4">What Kind of Data Are You Collecting?</a></li>
+                                    <li><a href="#5">How Should I Interpret Your Results?</a></li>
+                                </ul>
+                              </div>
+                              <div></div>
+                              <h3>What is a Twitter Bot?</h3>
+                              <p id="1">While Twitter has accounts that are controlled by humans, it also has accounts that are controlled by computer algorithms.
+                                Accounts that are controlled by computer algorithms are called bot accounts. Depending on the type of the bot account, these accounts can be
+                                both harmless or malicious. While harmless bot accounts can often be quite useful or entertaining, malicious bot accounts, 
+                                depending on what they were meant to be created for, can be quite harmful. Many different types of malicious bot accounts exist such as 
+                                fake followers, botnets, traditional, social bots, spam bots etc. These types of bots can manipulate users with misinformation spread,
+                                share fake news, do phishing, inflate an accounts followers, commit different types of frauds, spread malware, create spams and other 
+                                types of harmful activities.</p>
+                              <h3>Who Created Twitter Bot Detector?</h3>
+                              <p id="2">Twitter Bot Detector was created with a collaborative effort by Yavuz Kanber and Yusuf Alptigin Gün, with 
+                                  Prof. Dr. Mehmet Keskinöz being the advisor, as a graduation project for ITU Computer Engineering classes BLG 4901E and BLG 4902E. 
+                              </p> 
+                              <h3>How Does Twitter Bot Detector Work?</h3>
+                              <p id="3">
+                                  Twitter Bot Detector is a machine learning algorithm trained to detect bots on Twitter using binary classification, meaning the algorithm
+                                  decides on a binary value 1, which is a bot, or 0, which is a human. These results are shown as "bot", 1, and "human", 0, for the user.
+                                  For classifying accounts, Twitter Bot Detector uses thousands of already labeled existing accounts to compare and calculate the result.
+                                  When the username is given to the detector, the website fetches the users profile and its tweets with the help of Twitter API. The fetched data
+                                  is then passed to the machine learning platform to get the classification result. Lastly, the classification result is passed back to the website for the
+                                  result to be shown to the user.
+                              </p> 
+                              <h3>Are There Any Privacy Issues I Should be Concerned of?</h3>
+                              <p id="4">We believe that the transparency of our algorithm and the usage of the data provided is the most important factor in building a trustworthy
+                                application. We don't retain any of the data processed, the usernames, prediction scores, data provided by the Twitter API. Also, the data 
+                                used while calculating the prediction, which is the data provided by the Twitter API, only consists of the users public profile and tweets, which
+                                doesn't include any private information regarding the user. Further explanaitions about Twitter Bot Detector, the training set used while creating 
+                                it, more in depth details about the algorithm, its features, accuracy, different types of evaluation metrics and many more can be found in our report 
+                                <span><a href="https://github.com/yusufalptigin/Detecting-Social-Bots-Using-Twitter-Data/blob/main/Detecting%20Social%20Bots%20Using%20Twitter%20Data.pdf">here</a>.</span></p> 
+                              <h3>How Should I Interpret Your Results?</h3>
+                              <p id="5">
+                                The classification model results are very straightforward and give direct results by saying that an account is a bot or human. Because of this,
+                                although the algorithm will be decisive by giving precise decisions about an account, on the flip side, there's zero room for error when making a mistake 
+                                since there's no in between for the model. It's always good to keep this in mind when using the Twitter Bot Detector. Bot detection isn't an easy task
+                                by any means and there are many different criterias used while determining an outcome. Sometimes, even to us humans, it's not obvious. In a perfect world 
+                                where detecting bots were easy, Elon Musk would have already bought Twitter. Also to keep in mind, both humans and machines have very different strenghts when trying to
+                                recognize a bot account. While the machine can sometimes find real accounts that a human can very easily recognize as bots, a human might also be surprised
+                                at the fact that a verified account they've been following can be bot account. And yes, there are many bot accounts on Twitter that are verified. Suffice to say, 
+                                the main idea on how to interpret the Twitter Bot Detector results would be to use the model results as a complement to your own judgement which will, in the end, 
+                                create more definite results .
+                              </p> 
+                            </div>
+                              <div class="col">
+                            </div>
+                          </div>
+        
+    </body>
+</html>
