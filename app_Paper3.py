@@ -47,10 +47,6 @@ def home():
 def FAQ():
     return render_template('FAQ.html')
 
-@app.route('/privacy', methods=["GET", "POST"])
-def privacy():
-    return render_template('privacy.html')
-
 #Set a post method to yield predictions on page
 @app.route('/', methods = ['POST'])
 def predict():
