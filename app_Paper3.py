@@ -57,6 +57,8 @@ def predict():
 
     try:
         user = api.get_user(screen_name = Account_name)
+        if(user.protected):
+            return render_template('index.html', prediction_text = "User " + Account_name + " is unauthorized for access.")
     except tweepy.errors.Forbidden:
         return render_template('index.html', prediction_text = "User " + Account_name + " is suspended.")
     except tweepy.errors.NotFound:
